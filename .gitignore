@@ -1,5 +1,4 @@
 # Ignore large folders and generated files
-models/
 mlruns/
 venv/
 __pycache__/
@@ -7,3 +6,11 @@ __pycache__/
 *.bin
 *.log
 *.pkl
+venv/
+llm-env/
+__pycache__/
+*.pyc
+- models/
++ models/*
++ !models/eval_and_log.py
+
