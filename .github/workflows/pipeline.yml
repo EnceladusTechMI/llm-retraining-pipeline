@@ -45,9 +45,4 @@ jobs:
           source venv/bin/activate
           python models/eval_and_log.py
 
-      - name: 📦 Upload MLflow logs
-        if: success()
-        uses: actions/upload-artifact@v2
-        with:
-          name: mlflow-logs
-          path: mlruns/
+      
