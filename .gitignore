@@ -1,0 +1,9 @@
+# Ignore large folders
+models/
+mlruns/
+__pycache__/
+venv/
+*.pt
+*.bin
+*.log
+*.pkl
