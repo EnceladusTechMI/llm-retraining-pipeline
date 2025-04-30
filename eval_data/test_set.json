@@ -1,0 +1,11 @@
+[
+    {
+      "question": "Happiness is a state of mind. What does this mean?",
+      "ground_truth": "It means happiness depends on how you think, not on what happens to you."
+    },
+    {
+      "question": "What is a famous quote about perseverance?",
+      "ground_truth": "A common quote is 'Fall seven times, stand up eight.'"
+    }
+]
+  

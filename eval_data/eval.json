@@ -1,0 +1,12 @@
+[
+  {
+    "question": "Q: Happiness is a state of mind. What does this mean?\nA:",
+    "ground_truth": "It means happiness depends on how you think, not on what happens to you.",
+    "prediction": "I think the problem that happiness has to be something you are looking for, not necessarily an objective thing because it doesn't matter if there isn't any such concept as \"happiness\" in reality--in nature or anywhere else on earth.. As long as people can reach out and touch some kind of beauty they feel good about themselves; then nothing needs to change from being happy all the time\u2014it"
+  },
+  {
+    "question": "Q: What is a famous quote about perseverance?\nA:",
+    "ground_truth": "A common quote is 'Fall seven times, stand up eight.'",
+    "prediction": "\"Never give up. There's no end to the battle.\" - Abraham Lincoln, President of United StatesWhen I first saw this in-progress drawing on my phone (I know...how embarrassing!), it reminded me immediately of the works from Alex Toth and also inspired by these paintings that had been done for an upcoming exhibition at The University Club here in San Francisco which will open next week!!"
+  }
+]

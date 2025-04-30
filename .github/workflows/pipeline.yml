@@ -1,0 +1,48 @@
+# .github/workflows/pipeline.yml
+
+name: LLM Auto-Retraining Pipeline
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  retrain-and-evaluate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: ⬇️ Checkout repo
+        uses: actions/checkout@v3
+
+      - name: 🐍 Set up Python 3.10
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: 🔧 Set up virtual environment & install dependencies
+        run: |
+          python -m venv venv
+          source venv/bin/activate
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: 🚀 Run fine-tuning
+        run: |
+          source venv/bin/activate
+          python scripts/finetune.py
+
+      - name: ✏️ Run inference
+        run: |
+          source venv/bin/activate
+          python scripts/generate_predictions.py \
+            --base_model "tiiuae/falcon-rw-1b" \
+            --lora_dir "models/lora_falcon_rw" \
+            --test_file "eval_data/test_set.json" \
+            --output_file "eval_data/eval.json"
+
+      - name: 📊 Run evaluation + MLflow logging + auto-promotion
+        run: |
+          source venv/bin/activate
+          python models/eval_and_log.py
